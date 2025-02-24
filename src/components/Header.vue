@@ -2,6 +2,17 @@
   <nav class="nav">
     <div class="logo">
       <img src="../assets/logo.svg" alt="logo" />
+      <v-autocomplete
+        label="Autocomplete"
+        :items="[
+          'California',
+          'Colorado',
+          'Florida',
+          'Georgia',
+          'Texas',
+          'Wyoming',
+        ]"
+      ></v-autocomplete>
     </div>
   </nav>
 </template>
