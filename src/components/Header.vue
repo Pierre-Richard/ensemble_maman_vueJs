@@ -1,15 +1,15 @@
 <template>
   <div class="hello">
-    <h1>Vue facing decorator</h1>
+    <h1>Composant Header</h1>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue, toNative } from "vue-facing-decorator";
 @Component
-class HelloWorld extends Vue {}
+class Header extends Vue {}
 
-export default toNative(HelloWorld);
+export default toNative(Header);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
