@@ -18,4 +18,9 @@ export default defineComponent({
   },
 });
 </script>
-<style></style>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>
