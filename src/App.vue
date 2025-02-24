@@ -4,17 +4,17 @@
     <router-link to="/about">About</router-link>
   </nav>
   <router-view /> -->
-  <HelloWorld />
+  <HomeView />
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import HomeView from "./views/HomeView.vue";
 
 export default defineComponent({
   name: "App",
 
   components: {
-    HelloWorld,
+    HomeView,
   },
 });
 </script>
