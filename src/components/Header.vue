@@ -1,14 +1,20 @@
 <template>
-  <v-app>
-    <v-app-bar :elevation="2">
-      <template v-slot:prepend>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      </template>
-      <v-img src="../assets/logo.svg" />
-      <v-app-bar-title>Application Bar</v-app-bar-title>
-    </v-app-bar>
-  </v-app>
-  <carousel />
+  <nav class="nav">
+    <div class="logo">
+      <img src="../assets/logo.svg" alt="logo" />
+      <v-autocomplete
+        label="Autocomplete"
+        :items="[
+          'California',
+          'Colorado',
+          'Florida',
+          'Georgia',
+          'Texas',
+          'Wyoming',
+        ]"
+      ></v-autocomplete>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
