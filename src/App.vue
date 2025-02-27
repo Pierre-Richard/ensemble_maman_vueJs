@@ -9,12 +9,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import HomeView from "./views/HomeView.vue";
+import Carousel from "./components/Carousel.vue";
 
 export default defineComponent({
   name: "App",
 
   components: {
     HomeView,
+    Carousel,
   },
 });
 </script>
