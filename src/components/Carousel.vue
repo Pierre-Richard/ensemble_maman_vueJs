@@ -1,6 +1,7 @@
 <template>
   <v-card>
     <v-layout>
+      <v-img src="../assets/logo.svg" />
       <v-app-bar>
         <v-app-bar-nav-icon
           variant="text"
