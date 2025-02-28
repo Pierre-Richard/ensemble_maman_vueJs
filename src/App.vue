@@ -5,6 +5,7 @@
   </nav>
   <router-view /> -->
   <HomeView />
+  dddddd
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
