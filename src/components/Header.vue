@@ -1,38 +1,91 @@
 <template>
-  <v-app>
-    <v-app-bar :elevation="2">
-      <template v-slot:prepend>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      </template>
-      <v-img src="../assets/logo.svg" />
-      <v-app-bar-title>Application Bar</v-app-bar-title>
-    </v-app-bar>
-  </v-app>
+  <v-card>
+    <v-layout>
+      <v-app-bar>
+        <v-img :width="179" src="../assets/logo.svg" />
+        <v-app-bar-nav-icon
+          variant="text"
+          @click.stop="drawer = !drawer"
+        ></v-app-bar-nav-icon>
+      </v-app-bar>
+
+      <v-navigation-drawer
+        v-model="drawer"
+        :location="$vuetify.display.mobile ? 'bottom' : undefined"
+        temporary
+      >
+        <v-list :items="data"></v-list>
+      </v-navigation-drawer>
+    </v-layout>
+  </v-card>
+
+  <!-- <v-text-field
+    label="Label"
+    v-model="textInput"
+    variant="solo-filled"
+  ></v-text-field>
+  <v-btn variant="outlined" @click="clickOnButton()"> Button </v-btn>
+  <span>{{ textInput }}</span> -->
+  Je suis dans le composant Header
 </template>
 
 <script lang="ts">
-import { Component, Vue, toNative } from "vue-facing-decorator";
-@Component
-class Header extends Vue {}
+import { Component, toNative, Vue, Watch } from "vue-facing-decorator";
+import Carrousel from "./Carrousel.vue";
 
+@Component({
+  components: {
+    Carrousel,
+  },
+})
+export class Header extends Vue {
+  textInput: string = "";
+  drawer: boolean = false;
+  group = null;
+
+  data = [
+    {
+      title: "Foo",
+      value: "foo",
+    },
+    {
+      title: "Bar",
+      value: "bar",
+    },
+    {
+      title: "Fizz",
+      value: "fizz",
+    },
+    {
+      title: "Buzz",
+      value: "buzz",
+    },
+  ];
+
+  @Watch("drawer")
+  onIsOpenChange(newVal: boolean) {
+    console.log("newVal", newVal);
+    console.log("InputText", this.textInput);
+    this.drawer = newVal;
+  }
+
+  clickOnButton() {
+    //comment en click sur mon button je peux recuperer
+    // la valeur de mon formulaire
+    console.log("Je click sur le button", this.textInput);
+  }
+}
 export default toNative(Header);
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.nav {
-  width: 100%;
-  height: 115px;
+<style>
+/* .v-carousel {
 }
-
-.logo {
-  width: 250px;
-  height: 113px;
+.custom-carousel .v-icon {
+  font-size: 18px;
 }
-
-img {
-  width: 250px;
-  height: 113px;
-  background-color: yellow;
-}
+.v-btn--icon.v-btn--density-default {
+  width: calc(var(--v-btn-height) + 3px)
+  height: calc(var(--v-btn-height) + 3px);
+} */
 </style>

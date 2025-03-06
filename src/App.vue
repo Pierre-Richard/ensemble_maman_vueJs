@@ -7,18 +7,16 @@
   <HomeView />
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { Component, toNative, Vue, Watch } from "vue-facing-decorator";
 import HomeView from "./views/HomeView.vue";
-import Carousel from "./components/Carousel.vue";
 
-export default defineComponent({
-  name: "App",
-
+@Component({
   components: {
     HomeView,
-    Carousel,
   },
-});
+})
+export class App extends Vue {}
+export default toNative(App);
 </script>
 <style>
 * {
