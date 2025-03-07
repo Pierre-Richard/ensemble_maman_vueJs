@@ -6,7 +6,7 @@
 import { Component, toNative, Vue } from "vue-facing-decorator";
 @Component
 export class Text extends Vue {
-  mot: string = "CA va marche mtn";
+  mot: string = "CA va marcher mtn";
 }
 export default toNative(Text);
 </script>

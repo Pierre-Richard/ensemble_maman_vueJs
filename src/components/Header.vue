@@ -18,15 +18,6 @@
       </v-navigation-drawer>
     </v-layout>
   </v-card>
-
-  <!-- <v-text-field
-    label="Label"
-    v-model="textInput"
-    variant="solo-filled"
-  ></v-text-field>
-  <v-btn variant="outlined" @click="clickOnButton()"> Button </v-btn>
-  <span>{{ textInput }}</span> -->
-  Je suis dans le composant Header
 </template>
 
 <script lang="ts">

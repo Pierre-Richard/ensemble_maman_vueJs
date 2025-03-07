@@ -1,5 +1,4 @@
 <template>
-  <Header />
   <Text />
 </template>
 
