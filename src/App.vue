@@ -1,50 +1,55 @@
 <template>
-  <v-card>
-    <v-layout>
-      <v-app-bar>
-        <v-img :width="179" src="./assets/logo.svg" />
-        <v-app-bar-nav-icon
-          variant="text"
-          @click.stop="drawer = !drawer"
-        ></v-app-bar-nav-icon>
-      </v-app-bar>
-
-      <v-navigation-drawer
-        v-model="drawer"
-        :location="$vuetify.display.mobile ? 'bottom' : undefined"
-        temporary
-      >
-        <v-list flat dense nav class="py-1">
-          <v-list-item-group color="primary" mandatory>
-            <v-list-item
-              v-for="item in items"
-              :key="item.title"
-              dense
-              router
-              :to="item.route"
-            >
-              <v-list-item-icon>
-                <v-icon>{{ item.icon }}</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-title>{{ item.title }}</v-list-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group> </v-list
-        >>
-      </v-navigation-drawer>
-    </v-layout>
-  </v-card>
+  <v-app>
+    <v-app-bar>
+      <v-img :width="100" src="./assets/logo.svg" />
+      <v-app-bar-nav-icon
+        variant="text"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+    </v-app-bar>
+    <v-navigation-drawer
+      v-model="drawer"
+      :location="$vuetify.display.mobile ? 'bottom' : undefined"
+      temporary
+    >
+      <v-list flat dense nav class="py-1">
+        <v-list-item-group color="primary" mandatory>
+          <v-list-item
+            v-for="item in items"
+            :key="item.title"
+            dense
+            router
+            :to="item.route"
+          >
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-title>{{ item.title }}</v-list-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group> </v-list
+      >>
+    </v-navigation-drawer>
+    <v-main>
+      <v-content>
+        <router-view />
+      </v-content>
+    </v-main>
+  </v-app>
 </template>
 <script lang="ts">
 import { Component, toNative, Vue, Watch } from "vue-facing-decorator";
+import Carrousel from "./components/Carrousel.vue";
 interface tab {
   icon: string;
   title: string;
   route: string;
 }
 @Component({
-  components: {},
+  components: {
+    Carrousel,
+  },
 })
 export class App extends Vue {
   textInput: string = "";

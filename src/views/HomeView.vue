@@ -1,5 +1,5 @@
 <template>
-  <Text />
+  <Carrousel />
 </template>
 
 <script lang="ts">
