@@ -1,11 +1,12 @@
 <template>
-  <div>{{ mot }}</div>
+  <div>{{ titreProps }}</div>
 </template>
 
 <script lang="ts">
-import { Component, toNative, Vue } from "vue-facing-decorator";
+import { Component, Prop, toNative, Vue } from "vue-facing-decorator";
 @Component
 export class Text extends Vue {
+  @Prop({ default: "Je suis une Props dans le SideBar" }) titreProps?: string;
   mot: string = "CA va marcher mtn";
 }
 export default toNative(Text);

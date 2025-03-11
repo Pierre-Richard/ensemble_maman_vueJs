@@ -26,9 +26,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, toNative } from "vue-facing-decorator";
+import { Component, Vue, toNative, Prop } from "vue-facing-decorator";
 @Component
-export class SieBar extends Vue {}
+export class SieBar extends Vue {
+  @Prop({ default: false, type: Boolean }) isDrawer?: boolean;
+}
 export default toNative(SieBar);
 </script>
 
