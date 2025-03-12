@@ -1,5 +1,5 @@
 <template>
-  <v-carousel height="130px">
+  <v-carousel height="300px">
     <v-carousel-item
       src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
       cover
