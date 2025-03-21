@@ -7,13 +7,11 @@ import { Component, toNative, Vue, Watch } from "vue-facing-decorator";
 
 // Components
 
-import Header from "@/components/Header.vue";
 import Carrousel from "@/components/Carrousel.vue";
 import Text from "@/components/Text.vue";
 
 @Component({
   components: {
-    Header,
     Carrousel,
     Text,
   },

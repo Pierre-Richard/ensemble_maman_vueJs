@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    v-model="drawer"
+    v-model="isDrawer"
     :location="$vuetify.display.mobile ? 'bottom' : undefined"
     temporary
   >

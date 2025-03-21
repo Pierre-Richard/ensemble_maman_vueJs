@@ -31,27 +31,23 @@
         </v-list-item-group> </v-list
       >>
     </v-navigation-drawer>
-    <SideBar />
+
     <v-main>
       <v-content>
         <router-view />
         <Text :titreProps="motApp" />
       </v-content>
     </v-main>
-    <v-footer
-      class="d-flex align-center justify-center ga-2 flex-wrap flex-grow-1 py-3"
-      color="surface-light"
-    >
-      <div class="flex-1-0-100 text-center mt-2">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </div>
-    </v-footer>
+    <v-content>
+      <Footer />
+    </v-content>
   </v-app>
 </template>
 <script lang="ts">
 import { Component, toNative, Vue, Watch } from "vue-facing-decorator";
 import Carrousel from "./components/Carrousel.vue";
 import Text from "./components/Text.vue";
+import Footer from "./components/Footer.vue";
 interface tab {
   icon: string;
   title: string;
@@ -60,6 +56,7 @@ interface tab {
 @Component({
   components: {
     Carrousel,
+    Footer,
     Text,
   },
 })

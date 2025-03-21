@@ -2,6 +2,7 @@
   <v-carousel height="300px">
     <v-carousel-item
       src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      title="Nous les mamans"
       cover
     ></v-carousel-item>
 
@@ -21,9 +22,10 @@
 import { Component, Vue, toNative } from "vue-facing-decorator";
 
 @Component
-export default class Carrousel extends Vue {
+export class Carrousel extends Vue {
   text: string = "";
 }
+export default toNative(Carrousel);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
